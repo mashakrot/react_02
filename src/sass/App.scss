@@ -1,0 +1,33 @@
+// // variables & functions
+// @import 'functions';
+@import 'variables';
+@import 'mixins';
+
+// base & layout
+@import 'base';
+// @import 'breakpoints';
+// @import 'grid';
+
+// // colors
+// @import "colors";
+
+// containers
+@import '../containers/blog/blog';
+@import '../containers/features/features';
+@import '../containers/footer/footer';
+@import '../containers/header/header';
+@import '../containers/possibility/possibility';
+@import '../containers/whatGPT3/whatGPT3';
+
+
+// components (button, card, navbar etc)
+@import '../components/article/article';
+@import '../components/brand/brand';
+@import '../components/cta/cta';
+@import '../components/feature/feature';
+@import '../components/navbar/navbar';
+
+// utilities (margin, padding, opacity, etc)
+@import 'utilities';
+
+

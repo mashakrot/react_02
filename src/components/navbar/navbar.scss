@@ -1,0 +1,146 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+// laptop sizes
+// TO DO add more responsive paddings and width of atleast buttons with some min-width
+
+
+// Navbar styles
+.main_navbar {
+  @include navbar-flex();
+
+  padding: 2rem 0;
+    max-width: 1170px;
+    margin: auto;
+
+  &-links {
+    flex: 1;
+    @include navbar-flex(flex-start, center, 2rem 0);
+
+    &_logo {
+      margin-right: 2rem;
+
+      img {
+        width: 62.56px;    
+        height: 16.02px;
+      }
+    }
+
+    &_container {
+      display: flex;
+      flex-direction: row;
+
+      p {
+        @include navbar-p-styles()
+      }
+    }
+  }
+
+  &-sign {
+    @include navbar-flex(flex-end,  center, 2rem 0);
+
+    button {
+        padding: 0.5rem 1rem;
+        color: $color-white;
+        background: #FF4820;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 25px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    p {
+        @include navbar-p-styles()
+    }
+  }
+
+  &-menu {
+    margin-left: 1rem;
+    display: none;
+    position: relative;
+
+
+    svg {
+      cursor: pointer;
+    }
+
+    &_container {
+      // galimai pasalinti padding is mixin
+      @include navbar-flex(flex-end, flex-end, 2rem);
+
+      flex-direction: column;
+      text-align: end;
+      background: $color-footer;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      margin-top: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 0 5 rgba(0,0,0,0.2);
+
+      &-links-sign {
+        display: none;
+      }
+
+      button {
+        padding: 1rem 2rem;
+        color: $color-white;
+        background: #FF4820;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 25px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+
+      p {
+          @include navbar-p-styles();
+          margin: 1rem 0;
+      }
+    }
+  }
+}
+
+
+
+// TO DO maybe try to redo it in mobile-first
+
+@media screen and (max-width: $laptop-width) {
+  .main_navbar-links_container {
+    display: none;  
+  }
+  .main_navbar-menu {
+     display: flex;
+  }
+}
+
+@media screen and (max-width: $tablet-width) {
+  .main_navbar {
+    padding: 2rem 4rem;
+  }
+}
+
+@media screen and (max-width: $phone-width) {
+  .main_navbar {
+    padding: 2rem;
+  }
+
+  .main_navbar-sign {
+    display: none;
+  }
+
+  .main_navbar-menu_container {
+    top: 20px;
+  }
+
+  .main_navbar-menu_container-links-sign {
+    display: block;
+  }
+}
